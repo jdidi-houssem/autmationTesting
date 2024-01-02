@@ -10,7 +10,7 @@ import com.upToTest.amazon.e2etest.automation.utils.WaitMethods;
 
 public class AuthenticationPage {
 
-	/* Locators */  
+	/* Locators */
 	final static String ACCEPT_COOKIES = "sp-cc-accept";
 	final static String COMPTES_ET_LISTES = "nav-link-accountList";
 	final static String EMAIL = "ap_email";
@@ -46,6 +46,7 @@ public class AuthenticationPage {
 	}
 
 	public void clickComptesEtListes() {
+		waitMethods.explicitWaitUntilVisibilityOfWEId(driver, COMPTES_ET_LISTES, 3);
 		comptesEtListes.click();
 	}
 
@@ -70,7 +71,7 @@ public class AuthenticationPage {
 		waitMethods.explicitWaitUntilVisibilityOfWEId(driver, MESSAGE, 1);
 		return message.getText();
 	}
-	
+
 	public String getErreurInvalidMailText() {
 		waitMethods.explicitWaitUntilVisibilityOfWEXpath(driver, ERROR_INVALID_MAIL, 10);
 		return erreurEmail.getText();

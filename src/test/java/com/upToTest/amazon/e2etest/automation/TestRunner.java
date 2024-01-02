@@ -9,8 +9,10 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 features = { "src/specs/features" }, 
-plugin = { "pretty", "html: target/cucumber-report.html","json: target/cucumber-report.json" }, 
-tags = ("@register"), 
+plugin = { "pretty", "html: target/cucumber-report.html",
+		   "json: target/cucumber-report.json",
+		   "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, 
+tags = ("@smoke"), 
 snippets = SnippetType.CAMELCASE, 
 monochrome = true)
 public class TestRunner {
